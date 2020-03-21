@@ -11,4 +11,5 @@ public interface AdminUserDAO extends BaseDAO<AdminUserDO> {
 
     AdminUserDO getAdminUserByUserName(String userName);
 
+
 }

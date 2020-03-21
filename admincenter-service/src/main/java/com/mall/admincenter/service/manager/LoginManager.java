@@ -31,4 +31,20 @@ public class LoginManager {
         return adminUserConverter.adminUserConverter(adminUserDO);
     }
 
+    public AdminUserDTO getAdminUserByUserId(Integer userId){
+        AdminUserDO adminUserDO = adminUserDAO.getById(userId);
+        if (adminUserDO == null) {
+            return null;
+        }
+        return adminUserConverter.adminUserConverter(adminUserDO);
+    }
+
+    public Integer updateAdminUser(AdminUserDTO adminUserDTO){
+        AdminUserDO adminUserDO = adminUserConverter.adminUserDTOConverter2DO(adminUserDTO);
+        if (adminUserDO == null){
+            return 0;
+        }
+        return adminUserDAO.update(adminUserDO);
+    }
+
 }

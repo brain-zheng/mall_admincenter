@@ -26,6 +26,6 @@ public interface BaseDAO<T> {
      * @param id
      * @return
      */
-    T getById(Long id);
+    T getById(Integer id);
 
 }

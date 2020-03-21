@@ -28,4 +28,20 @@ public class AdminUserConverter {
         return adminUserDTO;
     }
 
+    public AdminUserDO adminUserDTOConverter2DO(AdminUserDTO adminUserDTO) {
+        if (adminUserDTO == null) {
+            return null;
+        }
+        AdminUserDO adminUserDO = new AdminUserDO();
+        adminUserDO.setLoginUserName(adminUserDTO.getLoginUserName());
+        adminUserDO.setLoginPassword(adminUserDTO.getLoginPassword());
+        adminUserDO.setNickName(adminUserDTO.getNickName());
+        adminUserDO.setLocked(adminUserDTO.getLocked());
+        adminUserDO.setFeature(adminUserDTO.getFeature());
+        adminUserDO.setId(adminUserDTO.getId());
+        adminUserDO.setCreateTime(adminUserDTO.getCreateTime());
+        adminUserDO.setUpdateTime(adminUserDTO.getUpdateTime());
+        return adminUserDO;
+    }
+
 }

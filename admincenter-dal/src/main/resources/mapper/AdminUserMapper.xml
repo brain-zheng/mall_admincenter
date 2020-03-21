@@ -22,7 +22,6 @@
     id, <include refid="admin_user_column"/>, create_time, update_time
   </sql>
 
-
   <select id="getAdminUserByUserName" resultMap="adminUserMap">
       select
           <include refid="admin_user_column_all" />
@@ -33,5 +32,42 @@
           AND
           locked = 0
   </select>
+
+    <select id="getById" parameterType="Integer" resultMap="adminUserMap">
+        select
+            <include refid="admin_user_column_all" />
+        from
+            mall_admin_user
+        WHERE
+            id = #{id}
+            AND
+            locked = 0
+    </select>
+
+    <update id="update" parameterType="com.mall.admincenter.dal.dataobject.AdminUserDO">
+        UPDATE mall_admin_user
+        <set>
+            <if test="loginUserName != null">
+                login_user_name = #{loginUserName},
+            </if>
+            <if test="loginPassword != null">
+                login_password = #{loginPassword},
+            </if>
+            <if test="nickName != null">
+                nick_name = #{nickName},
+            </if>
+            <if test="locked != null">
+                locked = #{locked},
+            </if>
+            <if test="feature != null">
+                feature = #{feature},
+            </if>
+            update_time = now()
+        </set>
+        where
+            id = #{id}
+            AND
+            locked = 0
+    </update>
 
 </mapper>

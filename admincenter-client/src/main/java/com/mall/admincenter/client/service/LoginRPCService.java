@@ -11,4 +11,9 @@ public interface LoginRPCService {
 
     AdminUserDTO getAdminUserByUserName(String username);
 
+    AdminUserDTO getAdminUserByUserId(Integer userId);
+
+    Integer udpateAdminUser(AdminUserDTO adminUserDTO);
+
+
 }

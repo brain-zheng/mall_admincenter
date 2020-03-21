@@ -22,7 +22,6 @@ public class adminUserDAOTest extends BaseTest {
         String username = "admin";
         AdminUserDO result = adminUserDAO.getAdminUserByUserName(username);
         System.out.println(result);
-
     }
 
 }
