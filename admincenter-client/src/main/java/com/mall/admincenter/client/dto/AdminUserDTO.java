@@ -3,6 +3,7 @@ package com.mall.admincenter.client.dto;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @author zheng haijain
@@ -10,9 +11,24 @@ import java.io.Serializable;
  * @description  管理员信息
  */
 @Data
-public class AdminUserDTO extends BaseDTO{
+public class AdminUserDTO{
 
     private static final long serialVersionUID = 4945242054270905720L;
+
+    /**
+     * 主键
+     */
+    private Long id;
+
+    /**
+     * 创建时间
+     */
+    private Date createTime;
+
+    /**
+     * 更新时间
+     */
+    private Date updateTime;
 
     /**
      * 用户名

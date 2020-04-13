@@ -11,4 +11,15 @@
     <dubbo:service ref="LoginRPCServiceImpl" interface="com.mall.admincenter.client.service.LoginRPCService"
                    version="1.0.0" retries="0" />
 
+    <dubbo:service ref="IndexConfigServiceImpl" interface="com.mall.admincenter.client.service.IndexConfigService"
+                   version="1.0.0" retries="0" />
+
+
+
+    <!-- 消费者 -->
+    <dubbo:reference id="MallGoodsInfoService" interface="com.mall.goodscenter.client.service.MallGoodsInfoService"
+                     timeout="3000" version="1.0.0"/>
+
+
+
 </beans>
